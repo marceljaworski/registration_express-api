@@ -3,7 +3,7 @@ dotenv.config();
 
 import "./lib/mongoose.js";
 import express from "express";
-import registration from "./routes/registration.js";
+import registration from "./routes/user.js";
 import logMiddleware from "./middlewares/log.js";
 
 const app = express();

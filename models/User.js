@@ -1,20 +1,29 @@
-
 import mongoose from "mongoose";
 
 const schema = new mongoose.Schema({
-    name: {
+    first_name: {
         type: String,
     },
     email: {
         type: String,
+        validate: {
+            validator: (v) =>{
+                const val = v.startsWith("http") || v.startsWith("www")
+                return val;
+            },
+            message: "please enter a correct url"
+        },
+        required: true,
+        unique: true,
+    },
+    birthday: {
+        type: Date,
     },
     phoneNumber: {
         type: Number,
-
-    },
-    paswort: {
-        type: String,
     }
+
+
 });
 
 
